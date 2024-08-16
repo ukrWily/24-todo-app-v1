@@ -1,4 +1,10 @@
-function Todo({ todo }) {
-  return <h3>{todo}</h3>;
+import styles from "./Todo.module.css";
+
+function Todo({ todo, index, deleteTodo }) {
+  return (
+    <div onDoubleClick={() => deleteTodo(index)} className={styles.todo}>
+      <div className={styles.todoText}>{todo}</div>
+    </div>
+  );
 }
 export default Todo;
